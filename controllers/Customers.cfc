@@ -68,7 +68,6 @@ component
 	{
 		var subscriptions = [
 				model("subscription").new(),
-				model("subscription").new(),
 				model("subscription").new()
 			];
 		customer = model("customer").new(subscriptions=subscriptions);
