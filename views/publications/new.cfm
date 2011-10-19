@@ -1,4 +1,5 @@
-﻿<cfoutput>
+﻿<!--- The add/edit publication form. --->
+<cfoutput>
 
 	#contentFor(pageTitle="Add Publication")#
 

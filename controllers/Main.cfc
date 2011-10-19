@@ -1,5 +1,5 @@
 ﻿/**
- * @hint Main controller. Site entry poing.
+ * @hint Main controller. Site entry point.
  */
 component
 	extends="Controller"

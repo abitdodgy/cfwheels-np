@@ -1,5 +1,11 @@
 ﻿/**
  * @hint Customers controller.
+ *
+ * A 'normal subscription' refers to a setup that follows the many-to-many example in the Wheels
+ * documentation (nested properties chapter).
+ *
+ * An 'expiring subscription' is a setup where we try to include an additional expiration column in our joiner table. This functionality is broken.
+ *
  */
 component
 	extends="Controller"
@@ -16,7 +22,7 @@ component
 	// Filters
 
 	/**
-	 * @hint Retrieves publications so we don't have to repeat ourselves in all the actions.
+	 * @hint Retrieves publications so we don't have to repeat ourselves in all the actions where publications are required.
 	 */
 	public void function getPublications()
 	{
@@ -27,8 +33,9 @@ component
 	// Public
 
 	/**
-	 * @hint Renders the customer page.
-	 * @note In thia page we will not include the aditional expiration column.
+	 * @hint Renders the add customer with normal subscription page.
+	 * @note In this page we will *not* include the aditional subscription expiration column.
+	 * This strictly follows the example in the CFWheels documentation.
 	 */
 	public void function new()
 	{
@@ -36,7 +43,8 @@ component
 	}
 
 	/**
-	 * @hint Creates a new customer and attempts to create subscription nested-properties.
+	 * @hint Creates a new customer with a normal subscription using nested-properties.
+	 * @note Again here we create a normal subscription without the additional expiration column.
 	 */
 	public void function create()
 	{
@@ -53,8 +61,8 @@ component
 	}
 
 	/**
-	 * @hint Renders the customer page.
-	 * @note This page will include dateSelect() inputs for the additional expiration columns.
+	 * @hint Renders add customer with expiring subsription page.
+	 * @note This page will include dateSelect() input for an expiration column in our joiner table.
 	 */
 	public void function newExpiring()
 	{
@@ -66,7 +74,8 @@ component
 	}
 
 	/**
-	 * @hint Creates a new customer and attempts to create subscription nested-properties, including an expiration column.
+	 * @hint Creates a new customer object and its expiring subscriptions using nested-properties.
+	 * @note Here we are including the additional expiration column. This method currently failes. See: https://groups.google.com/forum/#!topic/cfwheels/OWDYizVDJlw
 	 */
 	public void function createExpiring()
 	{
@@ -83,7 +92,7 @@ component
 	}
 
 	/**
-	 * @hint Renders the edit customer page.
+	 * @hint Renders the edit page for a customer with a normal subscription.
 	 */
 	public void function edit()
 	{
@@ -92,7 +101,17 @@ component
 	}
 
 	/**
-	 * @hint Updates an existing customer and attempts to update its nested-properties.
+	 * @hint Renders the edit page for a customer with an expiring subscription.
+	 */
+	public void function edit()
+	{
+		customer = model("customer").findByKey(key=params.key, include="subscriptions");		
+		renderPage(action="new");
+	}
+
+	/**
+	 * @hint Updates an existing customer (with a normal or an expiring subscription) and updates its nested-properties.
+	 * @note We do not need a seperate update() function for expiring subscriptions. They simply work.
 	 */
 	public void function update()
 	{
@@ -109,7 +128,7 @@ component
 	}
 
 	/**
-	 * @hint Deletes a customer.
+	 * @hint Deletes a customer object.
 	 */
 	public void function delete()
 	{

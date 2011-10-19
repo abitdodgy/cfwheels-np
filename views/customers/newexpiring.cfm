@@ -1,3 +1,4 @@
+<!--- The add and edit form for a customer object with EXPIRING subscritions. --->
 <cfoutput>
 
 	#contentFor(pageTitle="Add Customer with Expiring Subscription(s)")#

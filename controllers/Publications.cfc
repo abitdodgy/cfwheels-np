@@ -5,7 +5,7 @@ component
 	extends="Controller"
 {
 	/**
-	 * @hint Renders the new publication page.
+	 * @hint Renders the add publication page.
 	 */
 	public void function new()
 	{

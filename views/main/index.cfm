@@ -1,8 +1,12 @@
-﻿<h1>Nested Properties Demo - Many-to-many Relationships</h1>
+﻿<!--- Application's entry page --->
+<h1>Nested Properties Demo - Many-to-many Relationships</h1>
 
 <div>
 
-	<p>This demo is based on the many-to-many <a href="http://cfwheels.org/docs/1-1/chapter/nested-properties" target="_blank">nested properties example</a> provided in the ColdFusion on Wheels documentation.</p>
+	<p>This demo app is an implementation of the <a href="http://cfwheels.org/docs/1-1/chapter/nested-properties" target="_blank">many-to-many scenario</a> found in the ColdFusion on Wheels nested properties documentation chapter.</p>
+	<p>This app allows you to add a customer object and its subscription objects using nested properties.</p>
+	<p>I have gone a step further and attempted to add extra functionality that allows us to use a "subscription expiration" column in our joiner table.</p>
+	<p>This extra functionality <b>does not</b> work for reasons unknown. Please see <a href="https://groups.google.com/forum/#!topic/cfwheels/OWDYizVDJlw" target="_blank">this thread</a> on Wheels' Google group for details</p>
 
 	<cfoutput>
 
@@ -23,7 +27,7 @@
 		<p>#linkTo(controller="customers", action="newExpiring", text="Add Customer with Expiring Subscription")#</p>
 	
 		<hr>
-	
+
 		<h2>Publications</h2>
 		<ol>
 		<cfloop query="publications">

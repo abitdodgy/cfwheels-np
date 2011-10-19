@@ -1,1 +1,10 @@
-This is a demonstration app for using nested peroperties in ColdFusion on Wheels.
+<h1>Nested Properties with ColdFusion on Wheels</h1>
+
+<p>This application demonstrates using nested properties with ColdFusion on Wheels.</p>
+
+<p>Nested properties allow you to handle data across data relationships across multiple tables using transactions.</p>
+
+<h2>Additional Feature</h2>
+<p>I'm also trying to find a way to use additional columns in our joiner tables to see if Wheels supports this feature of not.</p>
+<p>I have gone a step further and attempted to add extra functionality that allows us to use a "subscription expiration" column in our joiner table.</p>
+<p>This extra functionality <b>does not</b> work for reasons unknown. Please see <a href="https://groups.google.com/forum/#!topic/cfwheels/OWDYizVDJlw" target="_blank">this thread</a> on Wheels' Google group for details</p>

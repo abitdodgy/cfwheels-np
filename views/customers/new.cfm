@@ -1,4 +1,5 @@
-﻿<cfoutput>
+﻿<!--- The add and edit form for a customer object with normal subscritions. --->
+<cfoutput>
 
 	#contentFor(pageTitle="Add Customer with Normal Subscription(s)")#
 

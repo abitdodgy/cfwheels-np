@@ -13,5 +13,5 @@
 	<cfset set(URLRewriting="Partial")>
 --->
 
-<cfset set(dataSourceName="testapp")>
+<cfset set(dataSourceName="cfwheels-np")>
 <cfset set(URLRewriting="On")>
