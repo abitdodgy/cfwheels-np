@@ -115,7 +115,7 @@ component
 	 * @note We do not need a seperate update() function for expiring subscriptions. They simply work.
 	 */
 	public void function update()
-	{writeDump(params); abort;
+	{
 		customer = model("customer").findByKey(params.key);
 		customer.update(params.customer);
 
