@@ -68,6 +68,7 @@ component
 	{
 		var subscriptions = [
 				model("subscription").new(),
+				model("subscription").new(),
 				model("subscription").new()
 			];
 		customer = model("customer").new(subscriptions=subscriptions);
@@ -103,10 +104,10 @@ component
 	/**
 	 * @hint Renders the edit page for a customer with an expiring subscription.
 	 */
-	public void function edit()
+	public void function editExpiring()
 	{
 		customer = model("customer").findByKey(key=params.key, include="subscriptions");		
-		renderPage(action="new");
+		renderPage(action="newExpiring");
 	}
 
 	/**
@@ -114,7 +115,7 @@ component
 	 * @note We do not need a seperate update() function for expiring subscriptions. They simply work.
 	 */
 	public void function update()
-	{
+	{writeDump(params); abort;
 		customer = model("customer").findByKey(params.key);
 		customer.update(params.customer);
 
